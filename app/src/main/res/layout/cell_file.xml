@@ -18,7 +18,8 @@
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="@{() -> viewModel.onClicked()}">
+        android:onClick="@{() -> viewModel.onClicked()}"
+        app:onLongClick="@{() -> viewModel.onLongClicked()}">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
@@ -54,11 +55,11 @@
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:imageResourceId="@{viewModel.model.iconResId}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/iconBackground"
             app:layout_constraintStart_toStartOf="@id/iconBackground"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageResourceId="@{viewModel.model.iconResId}"
             app:tint="?attr/kpIconSecondaryColor"
             tools:src="@drawable/ic_file_24dp" />
 
